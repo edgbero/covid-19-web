@@ -1,8 +1,8 @@
 // @flow
 import { action, thunk } from "easy-peasy";
-import type { CovidType } from "./types";
+import type { LocationType } from "./types";
 
-const LatestCovid: CovidType = {
+const Location: LocationType = {
   initialState: {
     loading: true,
     error: false,
@@ -10,8 +10,13 @@ const LatestCovid: CovidType = {
     result: null,
   },
 
+  beginfetch: action((state, payload) => {
+    state.initialState.loading = true;
+    state.initialState.error = false;
+  }),
+
   fetchAction: action((state, payload) => {
-    state.initialState.result = payload;
+    state.initialState.result = payload.locations;
     state.initialState.loading = false;
     state.initialState.error = false;
   }),
@@ -22,10 +27,11 @@ const LatestCovid: CovidType = {
     state.initialState.errorMessage = error;
   }),
 
-  getLatestCovid: thunk(async (actions, payload) => {
+  getLocations: thunk(async (actions, payload) => {
     try {
+      actions.beginfetch();
       const request = await fetch(
-        `https://coronavirus-tracker-api.herokuapp.com/v2/latest?source=${payload}`
+        `https://coronavirus-tracker-api.herokuapp.com/v2/locations?source=${payload}`
       );
       const response = await request.json();
       actions.fetchAction(response);
@@ -35,4 +41,4 @@ const LatestCovid: CovidType = {
   }),
 };
 
-export default LatestCovid;
+export default Location;

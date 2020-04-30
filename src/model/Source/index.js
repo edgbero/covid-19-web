@@ -1,8 +1,8 @@
 // @flow
 import { action, thunk } from "easy-peasy";
-import type { CovidType } from "./types";
+import type { SourceType } from "./types";
 
-const Source: CovidType = {
+const Source: SourceType = {
   initialState: {
     loading: true,
     error: false,

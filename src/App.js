@@ -1,7 +1,7 @@
 import * as React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { StoreProvider, createStore } from "easy-peasy";
-import model from "./redux";
+import model from "./model";
 import Home from "./components/home";
 import About from "./components/about";
 import NotFound from "./components/not-found";

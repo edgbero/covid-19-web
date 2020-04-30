@@ -12,9 +12,9 @@ export type StateType = {
   errorMessage: null,
 }
 
-export type CovidType = {
+export type LocationType = {
   initialState: StateType,
   fetchAction: ActionType,
   error: ActionType,
-  getSource: ThunkType,
+  getLocations: ThunkType,
 }
