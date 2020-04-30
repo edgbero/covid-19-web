@@ -133,7 +133,6 @@ const ChooseSource = ({ data, loading }): React.Node => {
 };
 
 const DataCovid = ({ data, loading }): React.Node => {
-  console.log(loading);
   return (
     <React.Fragment>
       <Flex>
@@ -216,8 +215,6 @@ const Home = (): React.Node => {
     Source: sourceState,
     Location: locationState,
   } = useStoreState((state) => state);
-
-  console.log(latestState.initialState.loading);
 
   React.useEffect(() => {
     dispatch.Source.getSource();
