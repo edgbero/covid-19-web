@@ -1,7 +1,6 @@
-# CORONA VIRUS TRACKER WEB
+# CORONA VIRUS TRACKER
 
 **Provides a simple frontend web display Coronavirus data. Includes numbers about confirmed cases, deaths and recovered. Support multiple data-sources.**
-
 
 Currently 3 different data-sources are available to retrieve the data:
 - jhu - Johns Hopkins University Center.
