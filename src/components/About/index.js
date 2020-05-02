@@ -1,3 +1,4 @@
+// @flow
 import * as React from "react";
 import styled from "styled-components";
 import { Container, Image } from "react-bootstrap";
@@ -19,7 +20,7 @@ const Title = styled.h1`
   }
 `;
 
-const About = (): React => {
+const About = (): React.Node => {
   return (
     <React.Fragment>
       <Container className="text-center mt-3">

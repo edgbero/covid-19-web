@@ -1,3 +1,4 @@
+// @flow
 import * as React from "react";
 import { useStoreState, useStoreDispatch, useStoreActions } from "easy-peasy";
 import { Card, Table } from "react-bootstrap";

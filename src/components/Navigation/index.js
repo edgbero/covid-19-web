@@ -1,3 +1,4 @@
+// @flow
 import * as React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import styled from "styled-components";
@@ -26,7 +27,7 @@ const StyledNavLink = styled.div`
   
 `
 
-const Navigation = (props): React.Node => {
+const Navigation = (): React.Node => {
   return (
     <StyledNav>
       <Navbar expand="lg">

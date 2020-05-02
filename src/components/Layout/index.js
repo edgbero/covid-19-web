@@ -1,7 +1,8 @@
+// @flow
 import * as React from "react";
 import { Container } from "react-bootstrap";
 
-const Layout = (props): React.Node => {
+const Layout = (props: any) => {
   return <Container>{props.children}</Container>;
 };
 
