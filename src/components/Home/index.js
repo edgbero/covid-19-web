@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useStoreState, useStoreDispatch, useStoreActions } from "easy-peasy";
 import { Card, Table } from "react-bootstrap";
-import Jumbo from "./Jumbotron";
+import Jumbo from "../Jumbotron";
 import styled from "styled-components";
 
 const StyledCard = styled(Card)`

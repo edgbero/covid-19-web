@@ -10,9 +10,10 @@ const LatestCovid: CovidType = {
     result: null,
   },
   
-  beginfetch: action((state, payload) => {
+  beginFetch: action((state, payload) => {
     state.initialState.loading = true;
     state.initialState.error = false;
+    state.initialState.errorMessage = null; 
   }),
 
   fetchAction: action((state, payload) => {
@@ -29,14 +30,14 @@ const LatestCovid: CovidType = {
 
   getLatestCovid: thunk(async (actions, payload) => {
     try {
-      actions.beginfetch()
+      actions.beginFetch()
       const request = await fetch(
         `https://coronavirus-tracker-api.herokuapp.com/v2/latest?source=${payload}`
       );
       const response = await request.json();
       actions.fetchAction(response);
     } catch (error) {
-      actions.error(error);
+      actions.error(error.message)
     }
   }),
 };

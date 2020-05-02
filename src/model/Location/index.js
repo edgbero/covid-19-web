@@ -10,12 +10,14 @@ const Location: LocationType = {
     result: null,
   },
 
-  beginfetch: action((state, payload) => {
+  beginFetch: action((state, payload) => {
     state.initialState.loading = true;
     state.initialState.error = false;
+    state.initialState.errorMessage = null; 
   }),
 
   fetchAction: action((state, payload) => {
+    if(payload.locations)
     state.initialState.result = payload.locations;
     state.initialState.loading = false;
     state.initialState.error = false;
@@ -29,14 +31,14 @@ const Location: LocationType = {
 
   getLocations: thunk(async (actions, payload) => {
     try {
-      actions.beginfetch();
+      actions.beginFetch();
       const request = await fetch(
         `https://coronavirus-tracker-api.herokuapp.com/v2/locations?source=${payload}`
       );
       const response = await request.json();
       actions.fetchAction(response);
     } catch (error) {
-      actions.error(error);
+      actions.error(error.message)
     }
   }),
 };

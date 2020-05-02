@@ -30,7 +30,7 @@ const Source: SourceType = {
       const response = await request.json();
       actions.fetchAction(response);
     } catch (error) {
-      actions.error(error);
+      actions.error(error.message)
     }
   }),
 };

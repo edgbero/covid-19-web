@@ -1,12 +1,13 @@
 import React from "react";
 import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import App from "./App.js";
+
+import Jumbo from "../Jumbotron";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("App component", () => {
-  it("should render the component", () => {
-    const component = shallow(<App />);
+describe("Jumbo component", () => {
+  it("should have Container", () => {
+    const wrapper = shallow(<Jumbo />);
   });
 });
